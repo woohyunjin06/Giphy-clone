@@ -1,0 +1,112 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CGFloatLiteral (0.5.0)
+  - Differentiator (3.1.0)
+  - KeychainAccess (4.2.1)
+  - Kingfisher (4.10.1)
+  - KMNavigationBarTransition (1.1.8)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - ReactorKit (1.2.1):
+    - RxSwift (>= 4.0.0)
+  - Resolver (1.0.7)
+  - Result (4.1.0)
+  - RxAnimated (0.5.0):
+    - RxAnimated/Core (= 0.5.0)
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
+  - RxAnimated/Core (0.5.0):
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxCodable (0.4.0):
+    - RxCodable/Core (= 0.4.0)
+  - RxCodable/Core (0.4.0):
+    - RxSwift (>= 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxKeyboard (0.9.0):
+    - RxCocoa (>= 4.3.1)
+    - RxSwift (>= 4.3.1)
+  - RxSwift (4.5.0)
+  - RxViewController (0.4.1):
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
+  - SnapKit (4.2.0)
+  - SwiftRichString (3.7.2)
+  - Then (2.7.0)
+
+DEPENDENCIES:
+  - CGFloatLiteral
+  - KeychainAccess
+  - Kingfisher
+  - KMNavigationBarTransition
+  - Moya/RxSwift
+  - ReactorKit
+  - Resolver
+  - RxAnimated
+  - RxCocoa
+  - RxCodable
+  - RxDataSources
+  - RxKeyboard
+  - RxSwift
+  - RxViewController
+  - SnapKit
+  - SwiftRichString
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CGFloatLiteral
+    - Differentiator
+    - KeychainAccess
+    - Kingfisher
+    - KMNavigationBarTransition
+    - Moya
+    - ReactorKit
+    - Resolver
+    - Result
+    - RxAnimated
+    - RxCocoa
+    - RxCodable
+    - RxDataSources
+    - RxKeyboard
+    - RxSwift
+    - RxViewController
+    - SnapKit
+    - SwiftRichString
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CGFloatLiteral: 0328648f666e3cb2263d5ee3972df9d320786d25
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  KMNavigationBarTransition: 7ee1a05ff758bce9258845a803f7a8b00585bd58
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
+  Resolver: da30396fcabb46790959209430a4a0a9e6e39849
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxCodable: a5e218ab1cb9bd1a360d8803d9dd43868d708d23
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+
+PODFILE CHECKSUM: bb403fa4e543891a2f971658763abd6703ebbb47
+
+COCOAPODS: 1.9.3
