@@ -11,6 +11,8 @@ PODS:
   - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
   - ReactorKit (1.2.1):
     - RxSwift (>= 4.0.0)
   - Resolver (1.0.7)
@@ -22,6 +24,8 @@ PODS:
   - RxAnimated/Core (0.5.0):
     - RxCocoa (~> 4.3)
     - RxSwift (~> 4.3)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxCodable (0.4.0):
@@ -36,6 +40,8 @@ PODS:
     - RxCocoa (>= 4.3.1)
     - RxSwift (>= 4.3.1)
   - RxSwift (4.5.0)
+  - RxTest (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
   - RxViewController (0.4.1):
     - RxCocoa (>= 4.0.0)
     - RxSwift (>= 4.0.0)
@@ -49,14 +55,18 @@ DEPENDENCIES:
   - Kingfisher
   - KMNavigationBarTransition
   - Moya/RxSwift
+  - Nimble
+  - Quick
   - ReactorKit
   - Resolver
   - RxAnimated
+  - RxBlocking
   - RxCocoa
   - RxCodable
   - RxDataSources
   - RxKeyboard
   - RxSwift
+  - RxTest
   - RxViewController
   - SnapKit
   - SwiftRichString
@@ -71,15 +81,19 @@ SPEC REPOS:
     - Kingfisher
     - KMNavigationBarTransition
     - Moya
+    - Nimble
+    - Quick
     - ReactorKit
     - Resolver
     - Result
     - RxAnimated
+    - RxBlocking
     - RxCocoa
     - RxCodable
     - RxDataSources
     - RxKeyboard
     - RxSwift
+    - RxTest
     - RxViewController
     - SnapKit
     - SwiftRichString
@@ -93,20 +107,24 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   KMNavigationBarTransition: 7ee1a05ff758bce9258845a803f7a8b00585bd58
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
   Resolver: da30396fcabb46790959209430a4a0a9e6e39849
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxCodable: a5e218ab1cb9bd1a360d8803d9dd43868d708d23
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 6444e1f7b4628aff6cf588ad3ba5694f66cfeb87
+PODFILE CHECKSUM: 2297707ca0df0d9bb8a9bece18db5ff3a28977eb
 
 COCOAPODS: 1.9.3

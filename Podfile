@@ -44,6 +44,10 @@ target 'Giphy' do
 
   target 'GiphyTests' do
     inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'RxBlocking'
+    pod 'RxTest'
     # Pods for testing
   end
 
