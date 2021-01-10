@@ -10,6 +10,10 @@ import RxSwift
 
 class Client<Target: TargetType>: MoyaProvider<Target> {
 
+    init(plugins: [PluginType] = []) {
+        super.init(plugins: plugins + [APIKeyPlugin()])
+    }
+    
     func request(_ token: Target) -> Single<Response> {
         super.rx.request(token)
             .filterSuccessfulStatusCodes()
