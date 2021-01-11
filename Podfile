@@ -1,11 +1,21 @@
-platform :ios, '9.0'
+platform :ios, '12.0'
+inhibit_all_warnings!
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+    end
+  end
+end
+
+
 
 target 'Giphy' do
   use_frameworks!
   
   # Architecture
   pod 'ReactorKit'
-  pod 'Resolver'
+  pod 'Resolver', '1.4.0'
   
   # UI
   pod 'Kingfisher'
@@ -34,6 +44,10 @@ target 'Giphy' do
 
   target 'GiphyTests' do
     inherit! :search_paths
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'RxBlocking'
+    pod 'RxTest'
     # Pods for testing
   end
 
