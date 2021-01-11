@@ -7,8 +7,12 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
-    
-    
+import ReactorKit
 
+class HomeViewController: BaseViewController, View {
+    
+    func bind(reactor: HomeViewReactor) {
+        
+    }
+    
 }

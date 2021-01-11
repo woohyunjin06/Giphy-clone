@@ -15,7 +15,7 @@ PODS:
   - Quick (3.0.0)
   - ReactorKit (1.2.1):
     - RxSwift (>= 4.0.0)
-  - Resolver (1.0.7)
+  - Resolver (1.4.0)
   - Result (4.1.0)
   - RxAnimated (0.5.0):
     - RxAnimated/Core (= 0.5.0)
@@ -58,7 +58,7 @@ DEPENDENCIES:
   - Nimble
   - Quick
   - ReactorKit
-  - Resolver
+  - Resolver (= 1.4.0)
   - RxAnimated
   - RxBlocking
   - RxCocoa
@@ -110,7 +110,7 @@ SPEC CHECKSUMS:
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   ReactorKit: 8be57f0527ad1ac2963cd5c338274a46a01e57a3
-  Resolver: da30396fcabb46790959209430a4a0a9e6e39849
+  Resolver: 9371a9c561477b2ff76408114fa3ba7e94d17afe
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAnimated: 57a731e59557219480fb3dd86d965d977d863fc6
   RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
@@ -125,6 +125,6 @@ SPEC CHECKSUMS:
   SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 2297707ca0df0d9bb8a9bece18db5ff3a28977eb
+PODFILE CHECKSUM: 7d4248ff57472053e28c2e8618e10d4c5349a0b1
 
 COCOAPODS: 1.9.3

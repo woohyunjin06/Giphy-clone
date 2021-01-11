@@ -9,6 +9,6 @@ import Resolver
 
 extension Resolver {
     public static func registerViewReactors() {
-        
+        register { HomeViewReactor() }
     }
 }

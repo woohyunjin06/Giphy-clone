@@ -15,7 +15,7 @@ target 'Giphy' do
   
   # Architecture
   pod 'ReactorKit'
-  pod 'Resolver'
+  pod 'Resolver', '1.4.0'
   
   # UI
   pod 'Kingfisher'

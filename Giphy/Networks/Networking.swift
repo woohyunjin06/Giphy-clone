@@ -1,5 +1,5 @@
 //
-//  Client.swift
+//  Networking.swift
 //  Giphy
 //
 //  Created by 현진 on 2021/01/10.
@@ -8,7 +8,7 @@
 import Moya
 import RxSwift
 
-class Client<Target: TargetType>: MoyaProvider<Target> {
+class Networking<Target: TargetType>: MoyaProvider<Target> {
 
     init(plugins: [PluginType] = []) {
         super.init(plugins: plugins + [APIKeyPlugin()])

@@ -8,9 +8,9 @@
 import Foundation
 
 struct ResponseBody<Data: Decodable>: Decodable {
-    var data: Data?
-    var pagination: Pagination?
-    var meta: Meta
+    let data: Data?
+    let meta: Meta
 }
 
 struct NoData: Decodable {}
+
