@@ -9,7 +9,7 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        registerClients()
+        registerNetworkings()
         registerServices()
         registerViewReactors()
         registerViewControllers()

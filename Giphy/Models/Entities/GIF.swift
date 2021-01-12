@@ -15,15 +15,28 @@ struct GIF: Codable {
     let username, source, title, rating: String
     let importDatetime, trendingDatetime: String
     let images: Images
-    let user: User
+    let user: User?
 
+    enum CodingKeys: String, CodingKey {
+        case id, url, slug
+        case username, source, title, rating
+        case importDatetime = "import_datetime"
+        case trendingDatetime = "trending_datetime"
+        case images, user
+    }
+    
     struct Images: Codable {
         let fixedHeightSmall: Image
+        
+        enum CodingKeys: String, CodingKey {
+            case fixedHeightSmall = "fixed_height_small"
+        }
         
         struct Image: Codable {
             let height, width, size: String
             let mp4: String
         }
+        
     }
     
 }

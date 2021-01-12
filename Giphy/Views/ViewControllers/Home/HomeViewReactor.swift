@@ -17,7 +17,7 @@ class HomeViewReactor: Reactor {
     
     var initialState: State = State(
         isLoading: false,
-        items: [],
+        sections: [.gifs([])],
         offset: 0
     )
     
@@ -38,7 +38,7 @@ class HomeViewReactor: Reactor {
     
     struct State {
         var isLoading: Bool
-        var items: [GIF]
+        var sections: [GIFListViewSection]
         var offset: Int
     }
     
@@ -68,7 +68,10 @@ class HomeViewReactor: Reactor {
         case let .setLoading(isLoading):
             newState.isLoading = isLoading
         case let .appendItems(items):
-            newState.items = items
+            if let section = newState.sections.first {
+                let sectionItems = items.map(ShotListViewSectionItem.gif)
+                newState.sections = [.appended(from: section, items: sectionItems)]
+            }
         case let .setOffset(offset):
             newState.offset = offset
         }
