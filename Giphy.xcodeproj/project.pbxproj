@@ -25,6 +25,8 @@
 		1178DB6025AAD8F90015DAE6 /* GIFs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DB5F25AAD8F90015DAE6 /* GIFs.swift */; };
 		1178DB7225AADA7F0015DAE6 /* APIKeyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DB7125AADA7F0015DAE6 /* APIKeyPlugin.swift */; };
 		119BAEB325B57FFF005A85C5 /* DynamicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BAEB225B57FFF005A85C5 /* DynamicKey.swift */; };
+		119BAEBA25B59730005A85C5 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BAEB925B59730005A85C5 /* PlayerView.swift */; };
+		119BAEC025B59FB3005A85C5 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */; };
 		11AFDBED25A9D93C00727775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBEC25A9D93C00727775 /* AppDelegate.swift */; };
 		11AFDBEF25A9D93C00727775 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBEE25A9D93C00727775 /* SceneDelegate.swift */; };
 		11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBF025A9D93C00727775 /* HomeViewController.swift */; };
@@ -38,7 +40,7 @@
 		11DBEAC925AC4233006215D3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEAC825AC4233006215D3 /* Reusable.swift */; };
 		11DBEAD025AC42EB006215D3 /* GIFItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEACF25AC42EB006215D3 /* GIFItemCell.swift */; };
 		11DBEAD625AC4306006215D3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEAD525AC4306006215D3 /* BaseCollectionViewCell.swift */; };
-		11F4DBD725ADD9D40035C7F4 /* WaterfallLayout+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */; };
+		11F4DBD725ADD9D40035C7F4 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DBD625ADD9D40035C7F4 /* WaterfallLayout.swift */; };
 		C7E45E9A46CF7270B631C5D9 /* Pods_Giphy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1C4AD7FE2CDEE463572596 /* Pods_Giphy.framework */; };
 		FED9E1D120CCD644CBF4DAA5 /* Pods_GiphyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617567797E5BDA63B7A5C43D /* Pods_GiphyTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		1178DB5F25AAD8F90015DAE6 /* GIFs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFs.swift; sourceTree = "<group>"; };
 		1178DB7125AADA7F0015DAE6 /* APIKeyPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyPlugin.swift; sourceTree = "<group>"; };
 		119BAEB225B57FFF005A85C5 /* DynamicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicKey.swift; sourceTree = "<group>"; };
+		119BAEB925B59730005A85C5 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		11AFDBE925A9D93C00727775 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AFDBEC25A9D93C00727775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11AFDBEE25A9D93C00727775 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +93,7 @@
 		11DBEAC825AC4233006215D3 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		11DBEACF25AC42EB006215D3 /* GIFItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFItemCell.swift; sourceTree = "<group>"; };
 		11DBEAD525AC4306006215D3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterfallLayout+Rx.swift"; sourceTree = "<group>"; };
+		11F4DBD625ADD9D40035C7F4 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		1C1C4AD7FE2CDEE463572596 /* Pods_Giphy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C9CBA2098E1792CAC2CFC /* Pods-GiphyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphyTests/Pods-GiphyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		592B9615C1B5880037222D5B /* Pods-Giphy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy.debug.xcconfig"; path = "Target Support Files/Pods-Giphy/Pods-Giphy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1125D91E25AC44B100D99F45 /* UICollectionView+Reusable.swift */,
+				119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 		1178DA0225A9E23A0015DAE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				119BAEB825B59720005A85C5 /* Customs */,
 				11F4DB1325AC86CB0035C7F4 /* Layouts */,
 				1125D92425AC7D2000D99F45 /* Sections */,
 				11DBEACE25AC42CD006215D3 /* Cells */,
@@ -267,6 +273,14 @@
 			path = Servers;
 			sourceTree = "<group>";
 		};
+		119BAEB825B59720005A85C5 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				119BAEB925B59730005A85C5 /* PlayerView.swift */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
 		11AFDBE025A9D93C00727775 = {
 			isa = PBXGroup;
 			children = (
@@ -349,7 +363,7 @@
 		11F4DB1325AC86CB0035C7F4 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */,
+				11F4DBD625ADD9D40035C7F4 /* WaterfallLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -559,17 +573,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DBEAD025AC42EB006215D3 /* GIFItemCell.swift in Sources */,
+				119BAEBA25B59730005A85C5 /* PlayerView.swift in Sources */,
 				1125D92625AC7D3900D99F45 /* GIFListViewSection.swift in Sources */,
 				1178DB4B25AAD1240015DAE6 /* ClientError.swift in Sources */,
 				1178DB7225AADA7F0015DAE6 /* APIKeyPlugin.swift in Sources */,
 				11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */,
-				11F4DBD725ADD9D40035C7F4 /* WaterfallLayout+Rx.swift in Sources */,
+				11F4DBD725ADD9D40035C7F4 /* WaterfallLayout.swift in Sources */,
 				1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */,
 				1178DA5425A9F03C0015DAE6 /* DependencyRoot.swift in Sources */,
 				1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */,
 				1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */,
 				11AFDBED25A9D93C00727775 /* AppDelegate.swift in Sources */,
 				1178DA4A25A9EFA10015DAE6 /* ViewControllerDependency.swift in Sources */,
+				119BAEC025B59FB3005A85C5 /* UIScrollView+Rx.swift in Sources */,
 				1178DB3F25AACF490015DAE6 /* ResponseBody.swift in Sources */,
 				11DBEA8825AC268B006215D3 /* HomeViewReactor.swift in Sources */,
 				11DBEAD625AC4306006215D3 /* BaseCollectionViewCell.swift in Sources */,

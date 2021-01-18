@@ -36,6 +36,7 @@ class BaseCollectionViewCell<Item>: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.disposeBag = DisposeBag()
+        self.item = nil
     }
     
 }

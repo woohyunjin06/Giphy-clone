@@ -7,7 +7,6 @@
 
 import UIKit
 
-import CollectionViewWaterfallLayout
 import ReactorKit
 import RxDataSources
 import RxViewController
@@ -57,7 +56,6 @@ class HomeViewController: BaseViewController, View {
     override func initialize() {
         self.view.backgroundColor = .systemBackground
         self.view.addSubview(collectionView)
-        
     }
     
     override func setupConstraints() {
@@ -75,7 +73,6 @@ class HomeViewController: BaseViewController, View {
         reactor.state.map(\.sections)
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
         
     }
     

@@ -28,6 +28,7 @@ class HomeViewReactor: Reactor {
     
     enum Action {
         case refresh
+        case loadMore
     }
     
     enum Mutation {
@@ -55,7 +56,7 @@ class HomeViewReactor: Reactor {
                     .setOffset($0.pagination.offset + Consts.limit),
                     .appendItems($0.data)
                 ])
-            }.debug()
+            }
             let endLoading: Observable<Mutation> = .just(.setLoading(false))
             
             return .concat(startLoading, fetching, endLoading)
