@@ -7,6 +7,7 @@
 
 import UIKit
 
+import CollectionViewWaterfallLayout
 import ReactorKit
 import RxDataSources
 import RxViewController
@@ -25,8 +26,9 @@ class HomeViewController: BaseViewController, View {
     
     // MARK: - UI
     
-    lazy var collectionViewLayout = CollectionViewMasonryLayout().then {
-        $0.delegate = self
+    let collectionViewLayout = CollectionViewWaterfallLayout().then {
+        $0.minimumColumnSpacing = 6
+        $0.minimumInteritemSpacing = 6
     }
     
     lazy var collectionView = UICollectionView(
@@ -36,6 +38,7 @@ class HomeViewController: BaseViewController, View {
         $0.contentInset = .zero
         $0.backgroundColor = .clear
         $0.register(GIFItemCell.self)
+        $0.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     static private func factoryDataSource() -> RxCollectionViewSectionedReloadDataSource<GIFListViewSection> {
@@ -43,8 +46,9 @@ class HomeViewController: BaseViewController, View {
             switch sectionItem {
             case let .gif(gif):
                 let cell = collectionView.dequeue(GIFItemCell.self, for: indexPath)
-                cell.bind(item: gif)
+                cell.bind(item: gif) 
                 return cell
+                
             }
         }
     }
@@ -52,8 +56,8 @@ class HomeViewController: BaseViewController, View {
     // MARK: - View configuration
     override func initialize() {
         self.view.backgroundColor = .systemBackground
-        
         self.view.addSubview(collectionView)
+        
     }
     
     override func setupConstraints() {
@@ -71,25 +75,32 @@ class HomeViewController: BaseViewController, View {
         reactor.state.map(\.sections)
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+        
+        
     }
     
 }
 
-extension HomeViewController: CollectionViewMasonryLayoutDelegate {
+extension HomeViewController: CollectionViewWaterfallLayoutDelegate {
+    
     func collectionView(
         _ collectionView: UICollectionView,
-        ratioForCellAtIndexPath indexPath: IndexPath
+        layout: UICollectionViewLayout,
+        ratioForItemAtIndexPath indexPath: IndexPath
     ) -> CGFloat {
-        switch dataSource[indexPath] {
+        switch dataSource[indexPath as IndexPath] {
         case let .gif(gif):
-            let image = gif.images.fixedHeightSmall
+            let image = gif.images.image
+
+            
             
             guard let imageHeight = Int(image.height),
                   let imageWidth = Int(image.width)
             else {
                 return 1
             }
-            
+
+
             return CGFloat(imageHeight) / CGFloat(imageWidth)
         }
     }

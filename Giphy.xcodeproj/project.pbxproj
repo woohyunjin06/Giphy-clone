@@ -24,6 +24,7 @@
 		1178DB5B25AAD7C40015DAE6 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DB5A25AAD7C40015DAE6 /* Server.swift */; };
 		1178DB6025AAD8F90015DAE6 /* GIFs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DB5F25AAD8F90015DAE6 /* GIFs.swift */; };
 		1178DB7225AADA7F0015DAE6 /* APIKeyPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DB7125AADA7F0015DAE6 /* APIKeyPlugin.swift */; };
+		119BAEB325B57FFF005A85C5 /* DynamicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BAEB225B57FFF005A85C5 /* DynamicKey.swift */; };
 		11AFDBED25A9D93C00727775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBEC25A9D93C00727775 /* AppDelegate.swift */; };
 		11AFDBEF25A9D93C00727775 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBEE25A9D93C00727775 /* SceneDelegate.swift */; };
 		11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBF025A9D93C00727775 /* HomeViewController.swift */; };
@@ -37,7 +38,7 @@
 		11DBEAC925AC4233006215D3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEAC825AC4233006215D3 /* Reusable.swift */; };
 		11DBEAD025AC42EB006215D3 /* GIFItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEACF25AC42EB006215D3 /* GIFItemCell.swift */; };
 		11DBEAD625AC4306006215D3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEAD525AC4306006215D3 /* BaseCollectionViewCell.swift */; };
-		11F4DB1525AC86DF0035C7F4 /* CollectionViewMasonryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DB1425AC86DF0035C7F4 /* CollectionViewMasonryLayout.swift */; };
+		11F4DBD725ADD9D40035C7F4 /* WaterfallLayout+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */; };
 		C7E45E9A46CF7270B631C5D9 /* Pods_Giphy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1C4AD7FE2CDEE463572596 /* Pods_Giphy.framework */; };
 		FED9E1D120CCD644CBF4DAA5 /* Pods_GiphyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617567797E5BDA63B7A5C43D /* Pods_GiphyTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		1178DB5A25AAD7C40015DAE6 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		1178DB5F25AAD8F90015DAE6 /* GIFs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFs.swift; sourceTree = "<group>"; };
 		1178DB7125AADA7F0015DAE6 /* APIKeyPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyPlugin.swift; sourceTree = "<group>"; };
+		119BAEB225B57FFF005A85C5 /* DynamicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicKey.swift; sourceTree = "<group>"; };
 		11AFDBE925A9D93C00727775 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AFDBEC25A9D93C00727775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11AFDBEE25A9D93C00727775 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		11DBEAC825AC4233006215D3 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		11DBEACF25AC42EB006215D3 /* GIFItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFItemCell.swift; sourceTree = "<group>"; };
 		11DBEAD525AC4306006215D3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		11F4DB1425AC86DF0035C7F4 /* CollectionViewMasonryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewMasonryLayout.swift; sourceTree = "<group>"; };
+		11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterfallLayout+Rx.swift"; sourceTree = "<group>"; };
 		1C1C4AD7FE2CDEE463572596 /* Pods_Giphy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C9CBA2098E1792CAC2CFC /* Pods-GiphyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphyTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphyTests/Pods-GiphyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		592B9615C1B5880037222D5B /* Pods-Giphy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy.debug.xcconfig"; path = "Target Support Files/Pods-Giphy/Pods-Giphy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				11DBEA3F25AB3DF7006215D3 /* User.swift */,
 				1178DB3E25AACF490015DAE6 /* ResponseBody.swift */,
 				11DBEA4725AC2365006215D3 /* List.swift */,
+				119BAEB225B57FFF005A85C5 /* DynamicKey.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -346,7 +349,7 @@
 		11F4DB1325AC86CB0035C7F4 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				11F4DB1425AC86DF0035C7F4 /* CollectionViewMasonryLayout.swift */,
+				11F4DBD625ADD9D40035C7F4 /* WaterfallLayout+Rx.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				1178DB4B25AAD1240015DAE6 /* ClientError.swift in Sources */,
 				1178DB7225AADA7F0015DAE6 /* APIKeyPlugin.swift in Sources */,
 				11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */,
+				11F4DBD725ADD9D40035C7F4 /* WaterfallLayout+Rx.swift in Sources */,
 				1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */,
 				1178DA5425A9F03C0015DAE6 /* DependencyRoot.swift in Sources */,
 				1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */,
@@ -580,8 +584,8 @@
 				1178DA5A25AABDEF0015DAE6 /* NetworkingDependency.swift in Sources */,
 				11DBEA4825AC2365006215D3 /* List.swift in Sources */,
 				1178DB4725AACFE40015DAE6 /* Meta.swift in Sources */,
-				11F4DB1525AC86DF0035C7F4 /* CollectionViewMasonryLayout.swift in Sources */,
 				1178DB5B25AAD7C40015DAE6 /* Server.swift in Sources */,
+				119BAEB325B57FFF005A85C5 /* DynamicKey.swift in Sources */,
 				1178DB4325AACFA60015DAE6 /* Pagination.swift in Sources */,
 				11DBEA4025AB3DF7006215D3 /* User.swift in Sources */,
 			);

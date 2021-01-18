@@ -22,6 +22,7 @@ target 'Giphy' do
   pod 'SnapKit'
   pod 'KMNavigationBarTransition'
   pod 'SwiftRichString'
+  pod "CollectionViewWaterfallLayout", :git => 'https://github.com/woohyunjin06/CollectionViewWaterfallLayout.git'
   
   # Network
   pod 'Moya/RxSwift'

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GIF: Codable {
+struct GIF: Decodable {
     
     let id: String
     let url: String
@@ -25,11 +25,29 @@ struct GIF: Codable {
         case images, user
     }
     
-    struct Images: Codable {
-        let fixedHeightSmall: Image
+    struct Images: Decodable {
+        let image: Image
         
-        enum CodingKeys: String, CodingKey {
-            case fixedHeightSmall = "fixed_height_small"
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: DynamicKey.self)
+            
+            var image: Image?
+            for key in container.allKeys {
+                if key.stringValue == "fixed_height_small",
+                   let small = try? container.decodeIfPresent(Image.self, forKey: key) {
+                    image = small
+                    break
+                } else if key.stringValue == "original",
+                          let normal = try? container.decodeIfPresent(Image.self, forKey: key) {
+                    image = normal
+                }
+            }
+            
+            if let image = image {
+                self.image = image
+            } else {
+                fatalError()
+            }
         }
         
         struct Image: Codable {
