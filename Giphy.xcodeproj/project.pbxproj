@@ -32,6 +32,9 @@
 		11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AFDBF025A9D93C00727775 /* HomeViewController.swift */; };
 		11AFDBF625A9D93E00727775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11AFDBF525A9D93E00727775 /* Assets.xcassets */; };
 		11AFDBF925A9D93E00727775 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AFDBF725A9D93E00727775 /* LaunchScreen.storyboard */; };
+		11BE1E0F25B678BB007CA655 /* ColorSets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BE1E0E25B678BB007CA655 /* ColorSets.xcassets */; };
+		11BE1E1325B67941007CA655 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1E1225B67941007CA655 /* UIColor+Hex.swift */; };
+		11BE1E1725B6797F007CA655 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1E1625B6797F007CA655 /* RandomColor.swift */; };
 		11DBEA3625AB3AC3006215D3 /* GIFsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3525AB3AC3006215D3 /* GIFsService.swift */; };
 		11DBEA3C25AB3C80006215D3 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3B25AB3C80006215D3 /* GIF.swift */; };
 		11DBEA4025AB3DF7006215D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3F25AB3DF7006215D3 /* User.swift */; };
@@ -85,6 +88,9 @@
 		11AFDBFA25A9D93E00727775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11AFDBFF25A9D93E00727775 /* GiphyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11AFDC0525A9D93E00727775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BE1E0E25B678BB007CA655 /* ColorSets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSets.xcassets; sourceTree = "<group>"; };
+		11BE1E1225B67941007CA655 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		11BE1E1625B6797F007CA655 /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		11DBEA3525AB3AC3006215D3 /* GIFsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFsService.swift; sourceTree = "<group>"; };
 		11DBEA3B25AB3C80006215D3 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
 		11DBEA3F25AB3DF7006215D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				1125D91E25AC44B100D99F45 /* UICollectionView+Reusable.swift */,
 				119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */,
+				11BE1E1225B67941007CA655 /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -304,6 +311,7 @@
 		11AFDBEB25A9D93C00727775 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				11BE1E0D25B678AB007CA655 /* Resources */,
 				1178DA5E25AABE4F0015DAE6 /* App */,
 				1178DA4225A9EEFF0015DAE6 /* DI */,
 				1178DA0325A9E2400015DAE6 /* Models */,
@@ -312,7 +320,6 @@
 				1125D91D25AC449B00D99F45 /* Extensions */,
 				11DBEAC725AC4226006215D3 /* Utils */,
 				1178DA5D25AABE410015DAE6 /* Networks */,
-				11AFDBF525A9D93E00727775 /* Assets.xcassets */,
 				11AFDBF725A9D93E00727775 /* LaunchScreen.storyboard */,
 				11AFDBFA25A9D93E00727775 /* Info.plist */,
 			);
@@ -328,6 +335,15 @@
 			path = GiphyTests;
 			sourceTree = "<group>";
 		};
+		11BE1E0D25B678AB007CA655 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11AFDBF525A9D93E00727775 /* Assets.xcassets */,
+				11BE1E0E25B678BB007CA655 /* ColorSets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		11DBEA3225AB2AED006215D3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				11DBEAC825AC4233006215D3 /* Reusable.swift */,
+				11BE1E1625B6797F007CA655 /* RandomColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -472,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BE1E0F25B678BB007CA655 /* ColorSets.xcassets in Resources */,
 				11AFDBF925A9D93E00727775 /* LaunchScreen.storyboard in Resources */,
 				11AFDBF625A9D93E00727775 /* Assets.xcassets in Resources */,
 			);
@@ -580,6 +598,7 @@
 				11AFDBF125A9D93C00727775 /* HomeViewController.swift in Sources */,
 				11F4DBD725ADD9D40035C7F4 /* WaterfallLayout.swift in Sources */,
 				1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */,
+				11BE1E1725B6797F007CA655 /* RandomColor.swift in Sources */,
 				1178DA5425A9F03C0015DAE6 /* DependencyRoot.swift in Sources */,
 				1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */,
 				1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */,
@@ -599,6 +618,7 @@
 				11DBEA3625AB3AC3006215D3 /* GIFsService.swift in Sources */,
 				1178DA5A25AABDEF0015DAE6 /* NetworkingDependency.swift in Sources */,
 				11DBEA4825AC2365006215D3 /* List.swift in Sources */,
+				11BE1E1325B67941007CA655 /* UIColor+Hex.swift in Sources */,
 				1178DB4725AACFE40015DAE6 /* Meta.swift in Sources */,
 				1178DB5B25AAD7C40015DAE6 /* Server.swift in Sources */,
 				119BAEB325B57FFF005A85C5 /* DynamicKey.swift in Sources */,

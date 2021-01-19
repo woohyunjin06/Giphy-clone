@@ -18,7 +18,7 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
         $0.playerLayer.videoGravity = .resize
     }
     let imageView = UIImageView().then {
-        $0.backgroundColor = .blue
+        $0.backgroundColor = .random()
     }
     
     override func initialize() {
