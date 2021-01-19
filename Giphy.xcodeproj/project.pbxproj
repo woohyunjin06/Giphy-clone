@@ -35,6 +35,7 @@
 		11BE1E0F25B678BB007CA655 /* ColorSets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BE1E0E25B678BB007CA655 /* ColorSets.xcassets */; };
 		11BE1E1325B67941007CA655 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1E1225B67941007CA655 /* UIColor+Hex.swift */; };
 		11BE1E1725B6797F007CA655 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1E1625B6797F007CA655 /* RandomColor.swift */; };
+		11BE1E1E25B7072C007CA655 /* HomeViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE1E1D25B7072C007CA655 /* HomeViewControllerSpec.swift */; };
 		11DBEA3625AB3AC3006215D3 /* GIFsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3525AB3AC3006215D3 /* GIFsService.swift */; };
 		11DBEA3C25AB3C80006215D3 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3B25AB3C80006215D3 /* GIF.swift */; };
 		11DBEA4025AB3DF7006215D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DBEA3F25AB3DF7006215D3 /* User.swift */; };
@@ -91,6 +92,7 @@
 		11BE1E0E25B678BB007CA655 /* ColorSets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorSets.xcassets; sourceTree = "<group>"; };
 		11BE1E1225B67941007CA655 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		11BE1E1625B6797F007CA655 /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
+		11BE1E1D25B7072C007CA655 /* HomeViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerSpec.swift; sourceTree = "<group>"; };
 		11DBEA3525AB3AC3006215D3 /* GIFsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFsService.swift; sourceTree = "<group>"; };
 		11DBEA3B25AB3C80006215D3 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
 		11DBEA3F25AB3DF7006215D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -329,7 +331,8 @@
 		11AFDC0225A9D93E00727775 /* GiphyTests */ = {
 			isa = PBXGroup;
 			children = (
-				11DBEA3225AB2AED006215D3 /* Service */,
+				11BE1E1C25B70714007CA655 /* ViewControllers */,
+				11DBEA3225AB2AED006215D3 /* Services */,
 				11AFDC0525A9D93E00727775 /* Info.plist */,
 			);
 			path = GiphyTests;
@@ -344,11 +347,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		11DBEA3225AB2AED006215D3 /* Service */ = {
+		11BE1E1C25B70714007CA655 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11BE1E1D25B7072C007CA655 /* HomeViewControllerSpec.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11DBEA3225AB2AED006215D3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		11DBEAC725AC4226006215D3 /* Utils */ = {
@@ -461,6 +472,7 @@
 					};
 					11AFDBFE25A9D93E00727775 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 						TestTargetID = 11AFDBE825A9D93C00727775;
 					};
 				};
@@ -631,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BE1E1E25B7072C007CA655 /* HomeViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +831,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5U8557Y9;
 				INFOPLIST_FILE = GiphyTests/Info.plist;
@@ -829,6 +843,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjin.GiphyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giphy.app/Giphy";
@@ -841,6 +856,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5U8557Y9;
 				INFOPLIST_FILE = GiphyTests/Info.plist;

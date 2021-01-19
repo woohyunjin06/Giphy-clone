@@ -24,16 +24,18 @@ class HomeViewController: BaseViewController, View {
     }
     
     // MARK: - UI
-    
     let collectionViewLayout = CollectionViewWaterfallLayout().then {
         $0.minimumColumnSpacing = 6
         $0.minimumInteritemSpacing = 6
     }
     
+    let refreshControl = UIRefreshControl()
+    
     lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: collectionViewLayout
     ).then {
+        $0.refreshControl = refreshControl
         $0.contentInset = .zero
         $0.backgroundColor = .clear
         $0.register(GIFItemCell.self)
@@ -79,6 +81,10 @@ class HomeViewController: BaseViewController, View {
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
+        reactor.state.map(\.isRefreshing)
+            .bind(to: refreshControl.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        
     }
 }
 
@@ -93,8 +99,6 @@ extension HomeViewController: CollectionViewWaterfallLayoutDelegate {
         case let .gif(gif):
             let image = gif.images.image
 
-            
-            
             guard let imageHeight = Int(image.height),
                   let imageWidth = Int(image.width)
             else {
