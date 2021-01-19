@@ -19,5 +19,3 @@ jobs:
       run: |
         pod install --repo-update --clean-install
         xcodebuild test -workspace Giphy.xcworkspace -scheme Giphy -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=14.2'
-    - name: Run tests
-      run: swift test -v
