@@ -70,6 +70,11 @@ class HomeViewController: BaseViewController, View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        collectionView.rx.reachBottom
+            .map { Reactor.Action.loadMore }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         reactor.state.map(\.sections)
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)

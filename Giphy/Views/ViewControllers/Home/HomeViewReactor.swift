@@ -16,9 +16,12 @@ class HomeViewReactor: Reactor {
     }
     
     var initialState: State = State(
+        isRefreshing: false,
         isLoading: false,
-        sections: [.gifs([])],
-        offset: 0
+        sections: [],
+        offset: 0,
+        hasNext: false,
+        totalCount: 0
     )
     
     private let gifsService: GIFsService
@@ -33,14 +36,17 @@ class HomeViewReactor: Reactor {
     
     enum Mutation {
         case setLoading(Bool)
+        case setItems([GIF], totalCount: Int)
         case appendItems([GIF])
-        case setOffset(Int)
     }
     
     struct State {
+        var isRefreshing: Bool
         var isLoading: Bool
         var sections: [GIFListViewSection]
         var offset: Int
+        var hasNext: Bool
+        var totalCount: Int
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -49,16 +55,23 @@ class HomeViewReactor: Reactor {
             let startLoading: Observable<Mutation> = .just(.setLoading(true))
             let fetching: Observable<Mutation> = gifsService.trending(
                 limit: Consts.limit,
+                offset: 0
+            ).asObservable()
+            .map { ($0.data, totalCount: $0.pagination.totalCount) }
+            .map(Mutation.setItems)
+            let endLoading: Observable<Mutation> = .just(.setLoading(false))
+            return .concat(startLoading, fetching, endLoading)
+            
+        case .loadMore:
+            guard !currentState.isLoading,
+                  currentState.hasNext else { return .empty() }
+            let startLoading: Observable<Mutation> = .just(.setLoading(true))
+            let fetching: Observable<Mutation> = gifsService.trending(
+                limit: Consts.limit,
                 offset: currentState.offset
             ).asObservable()
-            .flatMap {
-                Observable.from([
-                    .setOffset($0.pagination.offset + Consts.limit),
-                    .appendItems($0.data)
-                ])
-            }
+            .map { .appendItems($0.data) }
             let endLoading: Observable<Mutation> = .just(.setLoading(false))
-            
             return .concat(startLoading, fetching, endLoading)
         }
     }
@@ -68,14 +81,18 @@ class HomeViewReactor: Reactor {
         switch mutation {
         case let .setLoading(isLoading):
             newState.isLoading = isLoading
+        case let .setItems(items, totalCount):
+            newState.sections = [.gifs(items.map(ShotListViewSectionItem.gif))]
+            newState.totalCount = totalCount
+            newState.offset = Consts.limit
         case let .appendItems(items):
             if let section = newState.sections.first {
                 let sectionItems = items.map(ShotListViewSectionItem.gif)
                 newState.sections = [.appended(from: section, items: sectionItems)]
             }
-        case let .setOffset(offset):
-            newState.offset = offset
+            newState.offset += Consts.limit
         }
+        newState.hasNext = newState.offset < newState.totalCount
         return newState
     }
     
