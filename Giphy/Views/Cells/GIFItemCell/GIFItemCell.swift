@@ -36,7 +36,7 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     }
     
     private func registerNotification() {
-        NotificationCenter.default.rx
+        NotificationCenter.default.rx 
             .notification(.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
             .subscribe { [weak player] _ in
                 player?.seek(to: CMTime.zero)

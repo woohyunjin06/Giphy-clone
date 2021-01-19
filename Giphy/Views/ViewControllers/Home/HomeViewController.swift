@@ -13,7 +13,7 @@ import RxViewController
 
 class HomeViewController: BaseViewController, View {
     
-    private let dataSource: RxCollectionViewSectionedReloadDataSource<GIFListViewSection>
+    private let dataSource: RxCollectionViewSectionedAnimatedDataSource<GIFListViewSection>
     override init() {
         self.dataSource = Self.factoryDataSource()
     }
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController, View {
         $0.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
-    static private func factoryDataSource() -> RxCollectionViewSectionedReloadDataSource<GIFListViewSection> {
+    static private func factoryDataSource() -> RxCollectionViewSectionedAnimatedDataSource<GIFListViewSection> {
         return .init { dataSource, collectionView, indexPath, sectionItem in
             switch sectionItem {
             case let .gif(gif):
@@ -80,7 +80,6 @@ class HomeViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
     }
-    
 }
 
 extension HomeViewController: CollectionViewWaterfallLayoutDelegate {

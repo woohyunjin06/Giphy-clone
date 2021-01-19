@@ -11,7 +11,8 @@ enum GIFListViewSection {
   case gifs([ShotListViewSectionItem])
 }
 
-extension GIFListViewSection: SectionModelType {
+extension GIFListViewSection: AnimatableSectionModelType {
+    
     var items: [ShotListViewSectionItem] {
         switch self {
         case .gifs(let items): return items
@@ -22,6 +23,10 @@ extension GIFListViewSection: SectionModelType {
         switch original {
         case .gifs: self = .gifs(items)
         }
+    }
+    
+    var identity: String {
+        "gifs"
     }
     
     static func appended(
@@ -35,6 +40,18 @@ extension GIFListViewSection: SectionModelType {
     }
 }
 
-enum ShotListViewSectionItem {
+enum ShotListViewSectionItem: IdentifiableType, Equatable {
+    
     case gif(GIF)
+    
+    var identity: String {
+        switch self {
+        case let .gif(gif):
+            return gif.id
+        }
+    }
+    
+    static func == (lhs: ShotListViewSectionItem, rhs: ShotListViewSectionItem) -> Bool {
+        lhs.identity == rhs.identity
+    }
 }
