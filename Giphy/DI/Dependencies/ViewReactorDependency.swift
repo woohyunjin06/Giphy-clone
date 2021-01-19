@@ -9,6 +9,6 @@ import Resolver
 
 extension Resolver {
     public static func registerViewReactors() {
-        register { HomeViewReactor() }
+        register { HomeViewReactor(gifsService: $0.resolve()) }
     }
 }

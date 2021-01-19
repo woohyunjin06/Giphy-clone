@@ -14,7 +14,7 @@ struct APIKeyPlugin: PluginType {
         
         if let requestURL = request.url {
             var urlComponents = URLComponents(url: requestURL, resolvingAgainstBaseURL: false)
-            if urlComponents?.queryItems?.contains { $0.name == "api_key" } == false {
+            if urlComponents?.queryItems?.contains(where: { $0.name == "api_key" }) == false {
                 urlComponents?.queryItems?.append(URLQueryItem(name: "api_key", value: Consts.API_KEY))
             }
             request.url = try? urlComponents?.asURL()

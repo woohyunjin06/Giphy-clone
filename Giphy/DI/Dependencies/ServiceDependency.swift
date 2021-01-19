@@ -9,6 +9,6 @@ import Resolver
 
 extension Resolver {
     public static func registerServices() {
-        register { GIFsServiceImpl() as GIFsService }
+        register { GIFsServiceImpl(networking: $0.resolve()) as GIFsService }
     }
 }

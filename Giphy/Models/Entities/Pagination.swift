@@ -11,4 +11,9 @@ struct Pagination: Decodable {
     let offset: Int
     let totalCount: Int
     let count: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case offset, count
+        case totalCount = "total_count"
+    }
 }

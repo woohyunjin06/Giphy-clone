@@ -15,8 +15,11 @@ protocol GIFsService {
 class GIFsServiceImpl: GIFsService {
     
     private let networking: Networking<GIFs>
+    private let decoder: JSONDecoder
     init(networking: Networking<GIFs>) {
         self.networking = networking
+        self.decoder = JSONDecoder()
+        self.decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     func trending(limit: Int, offset: Int) -> Single<List<GIF>> {

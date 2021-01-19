@@ -11,4 +11,9 @@ struct Meta: Decodable {
     let msg: String
     let status: Int
     let responseId: String
+    
+    enum CodingKeys: String, CodingKey {
+        case msg, status
+        case responseId = "response_id"
+    }
 }

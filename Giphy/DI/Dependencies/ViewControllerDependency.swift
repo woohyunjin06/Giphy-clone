@@ -12,7 +12,7 @@ extension Resolver {
     public static func registerViewControllers() {
         register { HomeViewController() }
             .resolveProperties { resolver, viewController in
-                viewController.reactor = resolver.resolve()
+                viewController.reactor = resolver.resolve() as HomeViewReactor
             }
     }
 }
