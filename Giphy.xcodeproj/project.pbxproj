@@ -11,6 +11,7 @@
 		1125D92625AC7D3900D99F45 /* GIFListViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125D92525AC7D3900D99F45 /* GIFListViewSection.swift */; };
 		1160AE8B25B8606A000EF0C7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AE8A25B8606A000EF0C7 /* DetailViewController.swift */; };
 		1160AEAD25B860A5000EF0C7 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */; };
+		1160AEB325B865D4000EF0C7 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */; };
 		1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA0B25A9ECF60015DAE6 /* BaseViewController.swift */; };
 		1178DA4425A9EF5D0015DAE6 /* ServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA4325A9EF5D0015DAE6 /* ServiceDependency.swift */; };
 		1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA4D25A9EFBE0015DAE6 /* ViewReactorDependency.swift */; };
@@ -65,6 +66,7 @@
 		1125D92525AC7D3900D99F45 /* GIFListViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFListViewSection.swift; sourceTree = "<group>"; };
 		1160AE8A25B8606A000EF0C7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
+		1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		1178DA0B25A9ECF60015DAE6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1178DA4325A9EF5D0015DAE6 /* ServiceDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDependency.swift; sourceTree = "<group>"; };
 		1178DA4D25A9EFBE0015DAE6 /* ViewReactorDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReactorDependency.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				1125D91E25AC44B100D99F45 /* UICollectionView+Reusable.swift */,
 				119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */,
 				11BE1E1225B67941007CA655 /* UIColor+Hex.swift */,
+				1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				11AFDBEF25A9D93C00727775 /* SceneDelegate.swift in Sources */,
 				11DBEA3C25AB3C80006215D3 /* GIF.swift in Sources */,
 				11DBEAC925AC4233006215D3 /* Reusable.swift in Sources */,
+				1160AEB325B865D4000EF0C7 /* UINavigationController+Rx.swift in Sources */,
 				1178DA4425A9EF5D0015DAE6 /* ServiceDependency.swift in Sources */,
 				1178DB3B25AACE690015DAE6 /* Consts.swift in Sources */,
 				1178DB6025AAD8F90015DAE6 /* GIFs.swift in Sources */,
