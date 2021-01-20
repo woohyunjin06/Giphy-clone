@@ -1,9 +1,9 @@
-platform :ios, '12.0'
+platform :ios, '13.0'
 inhibit_all_warnings!
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
     end
   end
 end
@@ -25,8 +25,6 @@ target 'Giphy' do
   pod "CollectionViewWaterfallLayout", :git => 'https://github.com/woohyunjin06/CollectionViewWaterfallLayout.git'
   pod 'Hero'
   
-  # Network
-  pod 'Moya/RxSwift'
 
   # Rx
   pod 'RxSwift'
@@ -36,7 +34,10 @@ target 'Giphy' do
   pod 'RxKeyboard'
   pod 'RxAnimated'
   pod 'RxCodable'
-
+  
+  # Network
+  pod 'Moya/RxSwift'
+  
   # Etc
   pod 'KeychainAccess'
   pod 'Then'

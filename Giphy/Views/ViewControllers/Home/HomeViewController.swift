@@ -7,6 +7,7 @@
 
 import UIKit
 
+import RxSwift
 import ReactorKit
 import RxDataSources
 import RxViewController
@@ -85,9 +86,18 @@ class HomeViewController: BaseViewController, View {
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
-        
+        collectionView.rx.modelSelected(GIFListViewSectionItem.self)
+            
+            .map { [weak self] in self?.viewController(for: $0) }
+            
+//            .bind(to: navigationController?.rx.pushViewController(animated: true))
         
     }
+    
+    private func viewController(for model: GIFListViewSectionItem) -> UIViewController {
+        
+    }
+    
 }
 
 extension HomeViewController: CollectionViewWaterfallLayoutDelegate {

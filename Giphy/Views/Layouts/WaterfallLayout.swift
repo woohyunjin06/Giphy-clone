@@ -95,7 +95,6 @@ public class CollectionViewWaterfallLayout: UICollectionViewLayout {
     // MARK: - Private Properties
     private weak var delegate: CollectionViewWaterfallLayoutDelegate?  {
         get {
-            let a = collectionView?.rx.delegate.forwardToDelegate() as? CollectionViewWaterfallLayoutDelegate
             return collectionView?.rx.delegate.forwardToDelegate() as? CollectionViewWaterfallLayoutDelegate
         }
     }
