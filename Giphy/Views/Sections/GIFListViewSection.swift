@@ -8,18 +8,18 @@
 import RxDataSources
 
 enum GIFListViewSection {
-  case gifs([ShotListViewSectionItem])
+  case gifs([GIFListViewSectionItem])
 }
 
 extension GIFListViewSection: AnimatableSectionModelType {
     
-    var items: [ShotListViewSectionItem] {
+    var items: [GIFListViewSectionItem] {
         switch self {
         case .gifs(let items): return items
         }
     }
 
-    init(original: GIFListViewSection, items: [ShotListViewSectionItem]) {
+    init(original: GIFListViewSection, items: [GIFListViewSectionItem]) {
         switch original {
         case .gifs: self = .gifs(items)
         }
@@ -31,7 +31,7 @@ extension GIFListViewSection: AnimatableSectionModelType {
     
     static func appended(
         from original: GIFListViewSection,
-        items: [ShotListViewSectionItem]
+        items: [GIFListViewSectionItem]
     ) -> GIFListViewSection {
         switch original {
         case let .gifs(originalItems):
@@ -40,7 +40,7 @@ extension GIFListViewSection: AnimatableSectionModelType {
     }
 }
 
-enum ShotListViewSectionItem: IdentifiableType, Equatable {
+enum GIFListViewSectionItem: IdentifiableType, Equatable {
     
     case gif(GIF)
     
@@ -51,7 +51,7 @@ enum ShotListViewSectionItem: IdentifiableType, Equatable {
         }
     }
     
-    static func == (lhs: ShotListViewSectionItem, rhs: ShotListViewSectionItem) -> Bool {
+    static func == (lhs: GIFListViewSectionItem, rhs: GIFListViewSectionItem) -> Bool {
         lhs.identity == rhs.identity
     }
 }
