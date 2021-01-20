@@ -18,3 +18,4 @@ class DetailViewController: BaseViewController, View {
     }
     
 }
+

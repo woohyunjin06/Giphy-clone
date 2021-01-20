@@ -13,7 +13,6 @@
 		1160AEAD25B860A5000EF0C7 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */; };
 		1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA0B25A9ECF60015DAE6 /* BaseViewController.swift */; };
 		1178DA4425A9EF5D0015DAE6 /* ServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA4325A9EF5D0015DAE6 /* ServiceDependency.swift */; };
-		1178DA4A25A9EFA10015DAE6 /* ViewControllerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA4925A9EFA10015DAE6 /* ViewControllerDependency.swift */; };
 		1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA4D25A9EFBE0015DAE6 /* ViewReactorDependency.swift */; };
 		1178DA5425A9F03C0015DAE6 /* DependencyRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA5325A9F03C0015DAE6 /* DependencyRoot.swift */; };
 		1178DA5A25AABDEF0015DAE6 /* NetworkingDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178DA5925AABDEF0015DAE6 /* NetworkingDependency.swift */; };
@@ -68,7 +67,6 @@
 		1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
 		1178DA0B25A9ECF60015DAE6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1178DA4325A9EF5D0015DAE6 /* ServiceDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDependency.swift; sourceTree = "<group>"; };
-		1178DA4925A9EFA10015DAE6 /* ViewControllerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDependency.swift; sourceTree = "<group>"; };
 		1178DA4D25A9EFBE0015DAE6 /* ViewReactorDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReactorDependency.swift; sourceTree = "<group>"; };
 		1178DA5325A9F03C0015DAE6 /* DependencyRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRoot.swift; sourceTree = "<group>"; };
 		1178DA5925AABDEF0015DAE6 /* NetworkingDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDependency.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 				1178DA5925AABDEF0015DAE6 /* NetworkingDependency.swift */,
 				1178DA4325A9EF5D0015DAE6 /* ServiceDependency.swift */,
 				1178DA4D25A9EFBE0015DAE6 /* ViewReactorDependency.swift */,
-				1178DA4925A9EFA10015DAE6 /* ViewControllerDependency.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -629,7 +626,6 @@
 				1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */,
 				1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */,
 				11AFDBED25A9D93C00727775 /* AppDelegate.swift in Sources */,
-				1178DA4A25A9EFA10015DAE6 /* ViewControllerDependency.swift in Sources */,
 				119BAEC025B59FB3005A85C5 /* UIScrollView+Rx.swift in Sources */,
 				1178DB3F25AACF490015DAE6 /* ResponseBody.swift in Sources */,
 				1160AEAD25B860A5000EF0C7 /* DetailViewReactor.swift in Sources */,
