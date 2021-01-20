@@ -85,6 +85,8 @@ class HomeViewController: BaseViewController, View {
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
+        
+        
     }
 }
 

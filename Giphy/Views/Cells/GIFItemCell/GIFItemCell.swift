@@ -35,14 +35,6 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
         }
     }
     
-    private func registerNotification() {
-        NotificationCenter.default.rx 
-            .notification(.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-            .subscribe { [weak player] _ in
-                player?.seek(to: CMTime.zero)
-                player?.play()
-            }.disposed(by: disposeBag)
-    }
     
     override func bind(item: GIF) {
         super.bind(item: item)
@@ -52,6 +44,15 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
         }
         registerNotification()
         player.play()
+    }
+      
+    private func registerNotification() {
+        NotificationCenter.default.rx
+            .notification(.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+            .subscribe { [weak player] _ in
+                player?.seek(to: CMTime.zero)
+                player?.play()
+            }.disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {

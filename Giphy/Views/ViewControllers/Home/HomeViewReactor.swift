@@ -82,12 +82,12 @@ class HomeViewReactor: Reactor {
         case let .setLoading(isLoading):
             newState.isLoading = isLoading
         case let .setItems(items, totalCount):
-            newState.sections = [.gifs(items.map(ShotListViewSectionItem.gif))]
+            newState.sections = [.gifs(items.map(GIFListViewSectionItem.gif))]
             newState.totalCount = totalCount
             newState.offset = Consts.limit
         case let .appendItems(items):
             if let section = newState.sections.first {
-                let sectionItems = items.map(ShotListViewSectionItem.gif)
+                let sectionItems = items.map(GIFListViewSectionItem.gif)
                 newState.sections = [.appended(from: section, items: sectionItems)]
             }
             newState.offset += Consts.limit
