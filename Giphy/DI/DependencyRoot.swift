@@ -12,6 +12,5 @@ extension Resolver: ResolverRegistering {
         registerNetworkings()
         registerServices()
         registerViewReactors()
-        registerViewControllers()
     }
 }
