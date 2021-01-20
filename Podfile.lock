@@ -3,6 +3,7 @@ PODS:
   - CGFloatLiteral (0.5.0)
   - CollectionViewWaterfallLayout (0.5.0)
   - Differentiator (3.1.0)
+  - Hero (1.5.0)
   - KeychainAccess (4.2.1)
   - Kingfisher (4.10.1)
   - KMNavigationBarTransition (1.1.8)
@@ -53,6 +54,7 @@ PODS:
 DEPENDENCIES:
   - CGFloatLiteral
   - CollectionViewWaterfallLayout (from `https://github.com/woohyunjin06/CollectionViewWaterfallLayout.git`)
+  - Hero
   - KeychainAccess
   - Kingfisher
   - KMNavigationBarTransition
@@ -79,6 +81,7 @@ SPEC REPOS:
     - Alamofire
     - CGFloatLiteral
     - Differentiator
+    - Hero
     - KeychainAccess
     - Kingfisher
     - KMNavigationBarTransition
@@ -115,6 +118,7 @@ SPEC CHECKSUMS:
   CGFloatLiteral: 0328648f666e3cb2263d5ee3972df9d320786d25
   CollectionViewWaterfallLayout: 9f2438391e6d8434eb6c4824e8030ea09d011950
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   KMNavigationBarTransition: 7ee1a05ff758bce9258845a803f7a8b00585bd58
@@ -137,6 +141,6 @@ SPEC CHECKSUMS:
   SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 217f984683a77423c0dd21b370b01d348a8ee2d2
+PODFILE CHECKSUM: 116da37bd67fafe5b730fe2bc0474a4d4bf88410
 
 COCOAPODS: 1.10.1
