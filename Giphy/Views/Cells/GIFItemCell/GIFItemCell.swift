@@ -47,11 +47,10 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     override func bind(item: GIF) {
         super.bind(item: item)
         
-        registerNotification()
-        
         if let videoURL = URL(string: item.images.image.mp4) {
             player.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
         }
+        registerNotification()
         player.play()
     }
     
