@@ -7,8 +7,8 @@
 
 import UIKit
 
-import RxSwift
 import ReactorKit
+import Resolver
 import RxDataSources
 import RxViewController
 
@@ -86,16 +86,23 @@ class HomeViewController: BaseViewController, View {
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(GIFListViewSectionItem.self)
-            
-            .map { [weak self] in self?.viewController(for: $0) }
-            
-//            .bind(to: navigationController?.rx.pushViewController(animated: true))
+        
+        if let navigationController = self.navigationController {
+            collectionView.rx.modelSelected(GIFListViewSectionItem.self)
+                .compactMap { [weak self] in self?.viewController(for: $0) }
+                .bind(to: navigationController.rx.pushViewController(animated: true))
+                .disposed(by: disposeBag)
+        }
         
     }
     
     private func viewController(for model: GIFListViewSectionItem) -> UIViewController {
-        
+        switch model {
+        case let .gif(gif):
+            let viewController = DetailViewController()
+            viewController.reactor = Resolver.resolve(args: gif.id) as DetailViewReactor
+            return viewController
+        }
     }
     
 }

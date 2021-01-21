@@ -43,7 +43,7 @@ extension Reactive where Base: UICollectionView {
     func items<S: Sequence, Cell: UICollectionViewCell, O : ObservableType>(cellType: Cell.Type)
     -> (_ source: O)
     -> (_ configureCell: @escaping (Int, S.Iterator.Element, Cell) -> Void)
-    -> Disposable where O.E == S {
+    -> Disposable where O.Element == S {
         items(cellIdentifier: Cell.reuseID, cellType: cellType)
     }
 }
