@@ -13,6 +13,10 @@ import RxViewController
 
 class DetailViewController: BaseViewController, View {
     
+    override func initialize() {
+        self.view.backgroundColor = .systemBackground
+    }
+    
     func bind(reactor: DetailViewReactor) {
         
     }
