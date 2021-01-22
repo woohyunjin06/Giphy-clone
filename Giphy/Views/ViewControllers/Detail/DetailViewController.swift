@@ -16,7 +16,7 @@ import RxViewController
 class DetailViewController: BaseViewController, View {
     
     fileprivate struct Dimens {
-        static let defaultHeight = 100.f
+        
     }
     
     private let player = AVPlayer(playerItem: nil).then {
@@ -25,18 +25,38 @@ class DetailViewController: BaseViewController, View {
     
     lazy var playerView = PlayerView(player: player).then {
         $0.playerLayer.videoGravity = .resize
-        $0.backgroundColor = .random()
+    }
+    
+    let imageView: UIImageView
+    private let ratio: Float
+    
+    init(ratio: Float, snapshot: UIImage?) {
+        self.ratio = ratio
+        self.imageView = UIImageView().then {
+            $0.image = snapshot
+        }
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func initialize() {
         self.hero.isEnabled = true
         self.view.backgroundColor = .systemBackground
         
-        self.view.addSubview(playerView)
-        
-        playerView.snp.makeConstraints { make in
+        view.addSubview(imageView)
+        view.addSubview(playerView)
+    }
+    
+    override func setupConstraints() {
+        imageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(self.view.safeArea.top)
+            make.height.equalTo(self.view.snp.width).multipliedBy(ratio)
+        }
+        playerView.snp.makeConstraints { make in
+            make.edges.equalTo(imageView)
         }
     }
     
@@ -44,14 +64,6 @@ class DetailViewController: BaseViewController, View {
         reactor.state.map(\.id)
             .subscribe(onNext: { [weak self] id in
                 self?.playerView.heroID = id
-            }).disposed(by: disposeBag)
-        
-        reactor.state.map(\.ratio)
-            .subscribe(onNext: { [weak self] ratio in
-                guard let self = self else { return }
-                self.playerView.snp.updateConstraints { make in
-                    make.height.equalTo(self.view.snp.width).multipliedBy(ratio)
-                }
             }).disposed(by: disposeBag)
             
     }

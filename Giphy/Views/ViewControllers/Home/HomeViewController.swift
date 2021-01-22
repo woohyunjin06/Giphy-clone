@@ -86,9 +86,13 @@ class HomeViewController: BaseViewController, View {
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
+        let imageSnapshot = collectionView.rx.itemSelected
+            .compactMap { [weak self] in self?.imageSnapshot(for: $0) }
         
         collectionView.rx.modelSelected(GIFListViewSectionItem.self)
-            .compactMap { [weak self] in self?.viewController(for: $0) }
+            .withLatestFrom(imageSnapshot) { [weak self] model, snapshot in
+                self?.viewController(for: model, with: snapshot)
+            }.compactMap { $0 }
             .bind(onNext: { [weak self] viewController in
                 self?.navigationController?.pushViewController(viewController, animated: true)
             })
@@ -96,12 +100,19 @@ class HomeViewController: BaseViewController, View {
         
     }
     
-    private func viewController(for model: GIFListViewSectionItem) -> UIViewController {
+    private func imageSnapshot(for indexPath: IndexPath) -> UIImage? {
+        (self.collectionView.cellForItem(at: indexPath) as? GIFItemCell)?.imageSnapshot
+    }
+    
+    private func viewController(for model: GIFListViewSectionItem, with snapshot: UIImage?) -> UIViewController {
         switch model {
         case let .gif(gif):
-            let viewController = DetailViewController()
+            let viewController = DetailViewController(
+                ratio: Float(gif.images.image.ratio),
+                snapshot: snapshot
+            )
             viewController.reactor = Resolver.resolve(
-                args: ["id" : gif.id, "ratio" : Float(gif.images.image.ratio)]
+                args: ["id" : gif.id]
             ) as DetailViewReactor
             return viewController
         }

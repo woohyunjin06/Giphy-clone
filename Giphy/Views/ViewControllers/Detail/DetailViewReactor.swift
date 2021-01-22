@@ -13,12 +13,10 @@ class DetailViewReactor: Reactor {
     
     let initialState: State
     init(
-        id: String,
-        ratio: Float
+        id: String
     ) {
         self.initialState = State(
-            id: id,
-            ratio: ratio
+            id: id
         )
     }
     
@@ -32,7 +30,6 @@ class DetailViewReactor: Reactor {
     
     struct State {
         let id: String
-        let ratio: Float
     }
     
     func mutate(action: Action) -> Observable<Mutation> {

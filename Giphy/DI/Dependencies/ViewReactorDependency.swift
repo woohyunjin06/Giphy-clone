@@ -10,6 +10,6 @@ import Resolver
 extension Resolver {
     public static func registerViewReactors() {
         register { HomeViewReactor(gifsService: $0.resolve()) }
-        register { resolver, args in DetailViewReactor(id: args.get("id"), ratio: args.get("ratio")) }
+        register { resolver, args in DetailViewReactor(id: args.get("id")) }
     }
 }
