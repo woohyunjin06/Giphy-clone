@@ -12,8 +12,12 @@ import RxSwift
 class DetailViewReactor: Reactor {
     
     let initialState: State
-    init(id: String) {
-        self.initialState = State(id: id)
+    init(
+        id: String
+    ) {
+        self.initialState = State(
+            id: id
+        )
     }
     
     enum Action {

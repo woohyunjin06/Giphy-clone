@@ -8,6 +8,8 @@
 import UIKit
 import AVKit
 
+import Hero
+
 class GIFItemCell: BaseCollectionViewCell<GIF> {
     
     private let player = AVPlayer(playerItem: nil).then {
@@ -17,6 +19,7 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     lazy var playerView = PlayerView(player: player).then {
         $0.playerLayer.videoGravity = .resize
     }
+    
     let imageView = UIImageView().then {
         $0.backgroundColor = .random()
     }
@@ -39,8 +42,12 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     override func bind(item: GIF) {
         super.bind(item: item)
         
+        playerView.heroID = item.id
         if let videoURL = URL(string: item.images.image.mp4) {
-            player.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
+            let videoAsset = AVAsset(url: videoURL)
+            player.replaceCurrentItem(with: AVPlayerItem(asset: videoAsset))
+            
+            captureSnapshot(from: videoAsset)
         }
         registerNotification()
         player.play()
@@ -54,6 +61,18 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
                 player?.play()
             }.disposed(by: disposeBag)
     }
+    
+    var imageSnapshot: UIImage? = nil
+    private func captureSnapshot(from videoAsset: AVAsset) {
+        let imageGenerator = AVAssetImageGenerator(asset: videoAsset)
+        imageGenerator.requestedTimeToleranceAfter = CMTime.zero
+        imageGenerator.requestedTimeToleranceBefore = CMTime.zero
+
+        if let thumb: CGImage = try? imageGenerator.copyCGImage(at: player.currentTime(), actualTime: nil) {
+            imageSnapshot = UIImage(cgImage: thumb)
+        }
+    }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()

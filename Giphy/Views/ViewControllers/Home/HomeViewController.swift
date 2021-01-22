@@ -48,9 +48,9 @@ class HomeViewController: BaseViewController, View {
             switch sectionItem {
             case let .gif(gif):
                 let cell = collectionView.dequeue(GIFItemCell.self, for: indexPath)
+                cell.heroID = gif.id
                 cell.bind(item: gif) 
                 return cell
-                
             }
         }
     }
@@ -86,21 +86,34 @@ class HomeViewController: BaseViewController, View {
             .bind(to: refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
+        let imageSnapshot = collectionView.rx.itemSelected
+            .compactMap { [weak self] in self?.imageSnapshot(for: $0) }
         
-        if let navigationController = self.navigationController {
-            collectionView.rx.modelSelected(GIFListViewSectionItem.self)
-                .compactMap { [weak self] in self?.viewController(for: $0) }
-                .bind(to: navigationController.rx.pushViewController(animated: true))
-                .disposed(by: disposeBag)
-        }
+        collectionView.rx.modelSelected(GIFListViewSectionItem.self)
+            .withLatestFrom(imageSnapshot) { [weak self] model, snapshot in
+                self?.viewController(for: model, with: snapshot)
+            }.compactMap { $0 }
+            .bind(onNext: { [weak self] viewController in
+                self?.navigationController?.pushViewController(viewController, animated: true)
+            })
+            .disposed(by: disposeBag)
         
     }
     
-    private func viewController(for model: GIFListViewSectionItem) -> UIViewController {
+    private func imageSnapshot(for indexPath: IndexPath) -> UIImage? {
+        (self.collectionView.cellForItem(at: indexPath) as? GIFItemCell)?.imageSnapshot
+    }
+    
+    private func viewController(for model: GIFListViewSectionItem, with snapshot: UIImage?) -> UIViewController {
         switch model {
         case let .gif(gif):
-            let viewController = DetailViewController()
-            viewController.reactor = Resolver.resolve(args: gif.id) as DetailViewReactor
+            let viewController = DetailViewController(
+                ratio: Float(gif.images.image.ratio),
+                snapshot: snapshot
+            )
+            viewController.reactor = Resolver.resolve(
+                args: ["id" : gif.id]
+            ) as DetailViewReactor
             return viewController
         }
     }
@@ -116,16 +129,7 @@ extension HomeViewController: CollectionViewWaterfallLayoutDelegate {
     ) -> CGFloat {
         switch dataSource[indexPath as IndexPath] {
         case let .gif(gif):
-            let image = gif.images.image
-
-            guard let imageHeight = Int(image.height),
-                  let imageWidth = Int(image.width)
-            else {
-                return 1
-            }
-
-
-            return CGFloat(imageHeight) / CGFloat(imageWidth)
+            return gif.images.image.ratio
         }
     }
 }

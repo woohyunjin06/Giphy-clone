@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125D91E25AC44B100D99F45 /* UICollectionView+Reusable.swift */; };
 		1125D92625AC7D3900D99F45 /* GIFListViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125D92525AC7D3900D99F45 /* GIFListViewSection.swift */; };
+		11480C2F25BB10A800DFDACA /* UIView+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11480C2E25BB10A800DFDACA /* UIView+SafeArea.swift */; };
+		11480C3525BB111800DFDACA /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11480C3425BB111800DFDACA /* UIView+Image.swift */; };
 		1160AE8B25B8606A000EF0C7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AE8A25B8606A000EF0C7 /* DetailViewController.swift */; };
 		1160AEAD25B860A5000EF0C7 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */; };
 		1160AEB325B865D4000EF0C7 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		1125D91E25AC44B100D99F45 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		1125D92525AC7D3900D99F45 /* GIFListViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFListViewSection.swift; sourceTree = "<group>"; };
+		11480C2E25BB10A800DFDACA /* UIView+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SafeArea.swift"; sourceTree = "<group>"; };
+		11480C3425BB111800DFDACA /* UIView+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		1160AE8A25B8606A000EF0C7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1160AEAC25B860A5000EF0C7 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
 		1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				119BAEBF25B59FB3005A85C5 /* UIScrollView+Rx.swift */,
 				11BE1E1225B67941007CA655 /* UIColor+Hex.swift */,
 				1160AEB225B865D4000EF0C7 /* UINavigationController+Rx.swift */,
+				11480C2E25BB10A800DFDACA /* UIView+SafeArea.swift */,
+				11480C3425BB111800DFDACA /* UIView+Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				1178DA0C25A9ECF60015DAE6 /* BaseViewController.swift in Sources */,
 				11BE1E1725B6797F007CA655 /* RandomColor.swift in Sources */,
 				1178DA5425A9F03C0015DAE6 /* DependencyRoot.swift in Sources */,
+				11480C3525BB111800DFDACA /* UIView+Image.swift in Sources */,
 				1125D91F25AC44B100D99F45 /* UICollectionView+Reusable.swift in Sources */,
 				1178DA4E25A9EFBE0015DAE6 /* ViewReactorDependency.swift in Sources */,
 				11AFDBED25A9D93C00727775 /* AppDelegate.swift in Sources */,
@@ -648,6 +655,7 @@
 				11DBEA4825AC2365006215D3 /* List.swift in Sources */,
 				11BE1E1325B67941007CA655 /* UIColor+Hex.swift in Sources */,
 				1178DB4725AACFE40015DAE6 /* Meta.swift in Sources */,
+				11480C2F25BB10A800DFDACA /* UIView+SafeArea.swift in Sources */,
 				1178DB5B25AAD7C40015DAE6 /* Server.swift in Sources */,
 				119BAEB325B57FFF005A85C5 /* DynamicKey.swift in Sources */,
 				1178DB4325AACFA60015DAE6 /* Pagination.swift in Sources */,

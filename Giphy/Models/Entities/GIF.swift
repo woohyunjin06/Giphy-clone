@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct GIF: Decodable {
     
@@ -53,6 +54,16 @@ struct GIF: Decodable {
         struct Image: Codable {
             let height, width, size: String
             let mp4: String
+            
+            var ratio: CGFloat {
+                guard let imageHeight = Int(height),
+                      let imageWidth = Int(width)
+                else {
+                    return 1
+                }
+
+                return CGFloat(imageHeight) / CGFloat(imageWidth)
+            }
         }
         
     }
