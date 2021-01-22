@@ -87,12 +87,12 @@ class HomeViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         
-        if let navigationController = self.navigationController {
-            collectionView.rx.modelSelected(GIFListViewSectionItem.self)
-                .compactMap { [weak self] in self?.viewController(for: $0) }
-                .bind(to: navigationController.rx.pushViewController(animated: true))
-                .disposed(by: disposeBag)
-        }
+        collectionView.rx.modelSelected(GIFListViewSectionItem.self)
+            .compactMap { [weak self] in self?.viewController(for: $0) }
+            .bind(onNext: { [weak self] viewController in
+                self?.navigationController?.pushViewController(viewController, animated: true)
+            })
+            .disposed(by: disposeBag)
         
     }
     
