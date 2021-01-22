@@ -19,8 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let homeViewController = HomeViewController()
         homeViewController.reactor = Resolver.resolve() as HomeViewReactor
         
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.hero.isEnabled = true
+        
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: homeViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
     }

@@ -48,9 +48,9 @@ class HomeViewController: BaseViewController, View {
             switch sectionItem {
             case let .gif(gif):
                 let cell = collectionView.dequeue(GIFItemCell.self, for: indexPath)
+                cell.heroID = gif.id
                 cell.bind(item: gif) 
                 return cell
-                
             }
         }
     }
@@ -100,7 +100,9 @@ class HomeViewController: BaseViewController, View {
         switch model {
         case let .gif(gif):
             let viewController = DetailViewController()
-            viewController.reactor = Resolver.resolve(args: gif.id) as DetailViewReactor
+            viewController.reactor = Resolver.resolve(
+                args: ["id" : gif.id, "ratio" : Float(gif.images.image.ratio)]
+            ) as DetailViewReactor
             return viewController
         }
     }
@@ -116,16 +118,7 @@ extension HomeViewController: CollectionViewWaterfallLayoutDelegate {
     ) -> CGFloat {
         switch dataSource[indexPath as IndexPath] {
         case let .gif(gif):
-            let image = gif.images.image
-
-            guard let imageHeight = Int(image.height),
-                  let imageWidth = Int(image.width)
-            else {
-                return 1
-            }
-
-
-            return CGFloat(imageHeight) / CGFloat(imageWidth)
+            return gif.images.image.ratio
         }
     }
 }

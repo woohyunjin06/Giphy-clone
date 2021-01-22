@@ -8,6 +8,8 @@
 import UIKit
 import AVKit
 
+import Hero
+
 class GIFItemCell: BaseCollectionViewCell<GIF> {
     
     private let player = AVPlayer(playerItem: nil).then {
@@ -17,6 +19,7 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     lazy var playerView = PlayerView(player: player).then {
         $0.playerLayer.videoGravity = .resize
     }
+    
     let imageView = UIImageView().then {
         $0.backgroundColor = .random()
     }
@@ -39,6 +42,7 @@ class GIFItemCell: BaseCollectionViewCell<GIF> {
     override func bind(item: GIF) {
         super.bind(item: item)
         
+        playerView.heroID = item.id
         if let videoURL = URL(string: item.images.image.mp4) {
             player.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
         }

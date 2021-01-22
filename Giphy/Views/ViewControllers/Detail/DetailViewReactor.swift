@@ -12,8 +12,14 @@ import RxSwift
 class DetailViewReactor: Reactor {
     
     let initialState: State
-    init(id: String) {
-        self.initialState = State(id: id)
+    init(
+        id: String,
+        ratio: Float
+    ) {
+        self.initialState = State(
+            id: id,
+            ratio: ratio
+        )
     }
     
     enum Action {
@@ -26,6 +32,7 @@ class DetailViewReactor: Reactor {
     
     struct State {
         let id: String
+        let ratio: Float
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
